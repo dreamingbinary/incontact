@@ -22,4 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday_middleware"
   spec.add_dependency "hashie"
   spec.add_dependency "retryable"
+  spec.add_development_dependency "env"
+  spec.add_development_dependency "pry"
 end
