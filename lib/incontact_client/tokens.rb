@@ -1,7 +1,7 @@
 require "base64"
 
 module InContactClient
-  class Token < Connection
+  class Tokens < Connection
     class << self
 
       def get
