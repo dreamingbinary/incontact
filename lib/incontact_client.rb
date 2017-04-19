@@ -7,10 +7,13 @@ require "incontact_client/error"
 require "incontact_client/version"
 
 module InContactClient
-  autoload :Tokens, "incontact_client/tokens"
-  autoload :Connection, "incontact_client/connection"
+  autoload :Tokens,                     "incontact_client/tokens"
+  autoload :Connection,                 "incontact_client/connection"
+  autoload :TokenAuthenticatedResource, "incontact_client/token_authenticated_resource"
+  autoload :Agents,                     "incontact_client/agents"
 
   module Models
     autoload :Token, "incontact_client/models/token"
+    autoload :Agent, "incontact_client/models/agent"
   end
 end

@@ -75,6 +75,9 @@ module InContactClient
         data = response.body
         if data.is_a?(Array)
           data.map { |item| map_response_item_to_model(item, data_model_override) }
+        elsif data[klass_name].is_a?(Array)
+          data[klass_name] = data[klass_name].map { |item| map_response_item_to_model(item, data_model_override) }
+          data
         else
           map_response_item_to_model(data, data_model_override)
         end
@@ -83,6 +86,14 @@ module InContactClient
       def data_model(item)
         klass = item && item._type ? item._type.classify : name.demodulize.underscore.singularize.classify
         "InContactClient::Models::#{klass}".constantize rescue nil
+      end
+
+      def klass
+        klass_name.singularize.classify
+      end
+
+      def klass_name
+        name.demodulize.underscore
       end
 
       def map_response_item_to_model(item, data_model_override)
