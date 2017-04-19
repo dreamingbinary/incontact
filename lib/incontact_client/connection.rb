@@ -6,22 +6,21 @@ module InContactClient
     RETRY_SLEEP  = 1
 
     class << self
-      def get(path, params = {})
-        request :get, path, params
+      def get(url, authorization, params = {})
+        request :get, url, authorization, params
       end
 
-      def post(path, payload, params = {})
-        request :post, path, params, payload
+      def post(url, authorization, payload, params = {})
+        request :post, url, authorization, params, payload
       end
 
-      def request(type, path, params = {}, body=nil)
+      def request(type, url, authorization, params = {}, body=nil)
         timeout_override      = params.delete :timeout
         open_timeout_override = params.delete :open_timeout
         data_model_override   = params.delete :data_model_override
         response              = Retryable.retryable(retryable_options(params)) do
           request_with_exception_handling do
-            connection.send(type) do |req|
-              req.path                   = path
+            connection(url, authorization).send(type) do |req|
               req.options[:timeout]      = timeout_override      || TIMEOUT
               req.options[:open_timeout] = open_timeout_override || OPEN_TIMEOUT
               req.params                 = params
@@ -31,14 +30,6 @@ module InContactClient
         end
         raise_response_errors(response)
         parse_response(response, data_model_override)
-      end
-
-      def connection
-        Thread.current[:incontact_client_connection] ||= create_new_connection
-      end
-
-      def reestablish_connection
-        Thread.current[:incontact_client_connection] = nil
       end
 
       private
@@ -69,9 +60,8 @@ module InContactClient
         end
       end
 
-      def create_new_connection
-        Faraday.new do |faraday|
-          faraday.url_prefix                 = url
+      def connection(url, authorization)
+        Faraday.new(url: url) do |faraday|
           faraday.headers["Accept-Encoding"] = "none"
           faraday.headers["Content-Type"]    = "application/json; charset=utf-8"
           faraday.headers["Authorization"]   = authorization
@@ -100,14 +90,6 @@ module InContactClient
         data_model_klass = data_model_override || data_model(item)
         return item if data_model_klass.nil?
         data_model_klass.new(item)
-      end
-
-      def url
-        raise NotImplementedError
-      end
-
-      def authorization
-        raise NotImplementedError
       end
     end
   end
