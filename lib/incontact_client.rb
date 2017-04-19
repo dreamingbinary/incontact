@@ -12,10 +12,12 @@ module InContactClient
   autoload :TokenAuthenticatedResource, "incontact_client/token_authenticated_resource"
   autoload :Agents,                     "incontact_client/agents"
   autoload :Contacts,                   "incontact_client/contacts"
+  autoload :AgentSessions,              "incontact_client/agent_sessions"
 
   module Models
-    autoload :Token, "incontact_client/models/token"
-    autoload :Agent, "incontact_client/models/agent"
-    autoload :Contact, "incontact_client/models/agent"
+    autoload :Token,        "incontact_client/models/token"
+    autoload :Agent,        "incontact_client/models/agent"
+    autoload :Contact,      "incontact_client/models/agent"
+    autoload :AgentSession, "incontact_client/models/agent_session"
   end
 end
