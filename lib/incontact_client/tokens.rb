@@ -5,7 +5,7 @@ module InContactClient
     class << self
 
       def get
-        post("", token_request_data)
+        post(ENV["INCONTACT_TOKEN_URL"], authorization, token_request_data)
       end
 
       private
@@ -29,10 +29,6 @@ module InContactClient
 
       def encoded_auth_string
         Base64.encode64(auth_string).chomp
-      end
-
-      def url
-        ENV["INCONTACT_TOKEN_URL"]
       end
     end
   end
