@@ -17,7 +17,13 @@ module InContactClient
   module Models
     autoload :Token,        "incontact_client/models/token"
     autoload :Agent,        "incontact_client/models/agent"
-    autoload :Contact,      "incontact_client/models/agent"
+    autoload :Contact,      "incontact_client/models/contact"
     autoload :AgentSession, "incontact_client/models/agent_session"
+  end
+
+  module Responses
+    autoload :ContactResponse,      "incontact_client/responses/contact_response"
+    autoload :AgentResponse,        "incontact_client/responses/agent_response"
+    autoload :AgentSessionResponse, "incontact_client/responses/agent_session_response"
   end
 end

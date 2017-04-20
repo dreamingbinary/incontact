@@ -5,7 +5,7 @@ module InContactClient
     class << self
 
       def get
-        post(ENV["INCONTACT_TOKEN_URL"], authorization, token_request_data)
+        post(ENV["INCONTACT_TOKEN_URL"], authorization, token_request_data, token_params)
       end
 
       private
@@ -16,6 +16,12 @@ module InContactClient
           username:   ENV["INCONTACT_USERNAME"],
           password:   ENV["INCONTACT_PASSWORD"],
           scope:      ENV["INCONTACT_SCOPE"]
+        }
+      end
+
+      def token_params
+        {
+          data_model_override: InContactClient::Models::Token
         }
       end
 
