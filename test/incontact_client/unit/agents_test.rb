@@ -27,11 +27,11 @@ module InContactClient
 
     describe ".find" do
       before do
-        path = "services/v8.0/agents/1234"
+        path = "services/v8.0/agents/2682904"
         host = token.resource_server_base_uri
         url = "#{host}/#{path}"
         mock_request(:get, url, 200, "one_agent")
-        @agent_response = InContactClient::Agents.all(token)
+        @agent_response = InContactClient::Agents.find(2682904, token)
       end
 
       it "will return an AgentResponse" do

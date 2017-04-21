@@ -13,7 +13,7 @@ module InContactClient
       header_options = {"User-Agent" => /.*/ }
       body = response_file ? File.new("test/incontact_client/fixtures/#{response_file}.json") : ""
       
-      stub_request(:get, "http://example.com/incontact/services/v8.0/agents").with(headers: header_options).
+      stub_request(:get, url).with(headers: header_options).
         to_return(status: status, body: body)
     end
   end
