@@ -1,4 +1,4 @@
-module InContactApi
+module InContactClient
   class AgentSessions < TokenAuthenticatedResource
     class << self
       def join_agent_session(token, agent_id)

@@ -10,7 +10,7 @@ module InContactClient
         request :get, url, authorization, params
       end
 
-      def post(url, authorization, payload, params = {})
+      def post(url, authorization, payload = "", params = {})
         request :post, url, authorization, params, payload
       end
 
@@ -24,7 +24,7 @@ module InContactClient
               req.options[:timeout]      = timeout_override      || TIMEOUT
               req.options[:open_timeout] = open_timeout_override || OPEN_TIMEOUT
               req.params                 = params
-              req.body                   = body.to_json if body
+              req.body                   = body.to_json unless body.blank?
             end
           end
         end
