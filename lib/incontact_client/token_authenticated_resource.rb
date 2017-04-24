@@ -1,9 +1,10 @@
 module InContactClient
-  class TokenAuthenticatedResource < Connection
-    class << self
-      def build_url(token, path)
-        token.resource_server_base_uri + path
-      end
+  class TokenAuthenticatedResource
+
+    attr_reader :connection
+
+    def initialize(connection)
+      @connection = connection
     end
   end
 end

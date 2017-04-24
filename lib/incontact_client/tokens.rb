@@ -1,14 +1,22 @@
 require "base64"
 
 module InContactClient
-  class Tokens < Connection
+  class Tokens
     class << self
 
       def get
-        post(ENV["INCONTACT_TOKEN_URL"], authorization, token_request_data, token_params)
+        Connection.new(url, authorization).post(path, token_request_data, token_params)
       end
 
       private
+
+      def url
+        ENV["INCONTACT_TOKEN_URL"]
+      end
+
+      def path
+        ""
+      end
 
       def token_request_data
         {

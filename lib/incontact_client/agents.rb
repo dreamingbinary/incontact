@@ -1,15 +1,11 @@
 module InContactClient
   class Agents < TokenAuthenticatedResource
-    class << self
-      def all(token)
-        url = build_url(token, "/services/v8.0/agents")
-        get(url, token.authorization)
-      end
+    def all
+      connection.get("services/v8.0/agents")
+    end
 
-      def find(id, token)
-        url = build_url(token, "/services/v8.0/agents/#{id}")
-        get(url, token.authorization)
-      end
+    def find(id)
+      connection.get("services/v8.0/agents/#{id}")
     end
   end
 end
