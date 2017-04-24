@@ -29,7 +29,7 @@ module InContactClient
 
       def token_params
         {
-          data_model_override: InContactClient::Models::Token
+          default_data_model: InContactClient::Models::Token
         }
       end
 
