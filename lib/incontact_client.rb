@@ -7,12 +7,14 @@ require "incontact_client/error"
 require "incontact_client/version"
 
 module InContactClient
+  autoload :Api,                        "incontact_client/api"
   autoload :Tokens,                     "incontact_client/tokens"
   autoload :Connection,                 "incontact_client/connection"
   autoload :TokenAuthenticatedResource, "incontact_client/token_authenticated_resource"
   autoload :Agents,                     "incontact_client/agents"
   autoload :Contacts,                   "incontact_client/contacts"
   autoload :AgentSessions,              "incontact_client/agent_sessions"
+  autoload :Resources,                  "incontact_client/resources"
 
   module Models
     autoload :Token,        "incontact_client/models/token"
