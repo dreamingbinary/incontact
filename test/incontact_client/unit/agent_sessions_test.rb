@@ -2,19 +2,21 @@ require "test_helper"
 
 module InContactClient
   class AgentSessionsTest < TestCase
-    let(:token) do
-      InContactClient::Models::Token.new(token_type: "bearer",
-        access_token: "1234567", resource_server_base_uri: "http://example.com/incontact")
+    let(:connection) do
+      InContactClient::Connection.new(TEST_URL, "bearer 1234",
+        { default_data_model: InContactClient::Responses::AgentSessionResponse } )
+    end
+
+    let(:agent_session) do
+      InContactClient::AgentSessions.new(connection)
     end
 
     describe ".join_agent_session" do
       before do
         path = "services/v8.0/agent-sessions/join"
-        host = token.resource_server_base_uri
-        url = "#{host}/#{path}"
         body = { "asAgentId" => 1234 }
-        mock_request(:post, url, 202, "join_session", body)
-        @agent_session_response = InContactClient::AgentSessions.join_agent_session(token, 1234)
+        mock_request(:post, path, 202, "join_session", body)
+        @agent_session_response = agent_session.join_agent_session(1234)
       end
 
       it "will return an AgentSessionResponse" do
@@ -22,17 +24,15 @@ module InContactClient
       end
 
       it "will return the session_id" do
-        @agent_session_response.sessionId.must_equal "1234"
+        @agent_session_response["sessionId"].must_equal "1234"
       end
     end
 
     describe ".mask_call" do
       before do
         path = "services/v8.0/agent-sessions/1234/interactions/1234/mask"
-        host = token.resource_server_base_uri
-        url = "#{host}/#{path}"
-        mock_request(:post, url, 202)
-        @agent_session_response = InContactClient::AgentSessions.mask_call(token, 1234, 1234)
+        mock_request(:post, path, 202)
+        @agent_session_response = agent_session.mask_call(1234, 1234)
       end
 
       it "will return nothing" do
@@ -43,10 +43,8 @@ module InContactClient
     describe ".unmask_call" do
       before do
         path = "services/v8.0/agent-sessions/1234/interactions/1234/unmask"
-        host = token.resource_server_base_uri
-        url = "#{host}/#{path}"
-        mock_request(:post, url, 202)
-        @agent_session_response = InContactClient::AgentSessions.unmask_call(token, 1234, 1234)
+        mock_request(:post, path, 202)
+        @agent_session_response = agent_session.unmask_call(1234, 1234)
       end
 
       it "will return nothing" do
