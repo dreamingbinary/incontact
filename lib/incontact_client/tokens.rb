@@ -5,7 +5,7 @@ module InContactClient
     class << self
 
       def get
-        Connection.new(url, authorization).post(path, token_request_data, token_params)
+        Connection.new(url, authorization, token_options).post(path, token_request_data)
       end
 
       private
@@ -27,7 +27,7 @@ module InContactClient
         }
       end
 
-      def token_params
+      def token_options
         {
           default_data_model: InContactClient::Models::Token
         }
