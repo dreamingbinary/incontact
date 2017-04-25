@@ -3,7 +3,6 @@ module InContactClient
     attr_reader :token
 
     def initialize
-      puts "SETTING UP!"
       @token = InContactClient::Tokens.get
     end
 
