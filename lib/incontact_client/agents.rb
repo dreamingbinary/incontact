@@ -4,8 +4,8 @@ module InContactClient
       connection.get("agents")
     end
 
-    def find(id)
-      connection.get("agents/#{id}")
+    def find(agent_id)
+      connection.get("agents/#{agent_id}")
     end
   end
 end
