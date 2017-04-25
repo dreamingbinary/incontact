@@ -1,9 +1,10 @@
 module InContactClient
   class Connection
-    TIMEOUT      = 60
-    OPEN_TIMEOUT = 10
-    MAX_TRIES    = 2
-    RETRY_SLEEP  = 1
+    TIMEOUT         = 60
+    OPEN_TIMEOUT    = 10
+    MAX_TRIES       = 2
+    RETRY_SLEEP     = 1
+    API_PATH_PREFIX = "services/v8.0/"
 
     attr_reader :url
     attr_reader :authorization
@@ -30,7 +31,7 @@ module InContactClient
       response              = Retryable.retryable(retryable_options(params)) do
         request_with_exception_handling do
           connection.send(type) do |req|
-            req.path                   = path
+            req.path                   = API_PATH_PREFIX + path unless path.blank?
             req.options[:timeout]      = timeout_override      || TIMEOUT
             req.options[:open_timeout] = open_timeout_override || OPEN_TIMEOUT
             req.params                 = params
