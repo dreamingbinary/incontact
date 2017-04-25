@@ -11,8 +11,8 @@ module InContactClient
     
     describe ".all" do
       before do
-        path = "services/v8.0/agents"
-        mock_request(:get, path, 200, "all_agents")
+        options = { path: "agents", response_file: "all_agents"}
+        mock_request(:get, 200, options)
         @agent_response = agent.all
       end
 
@@ -27,8 +27,8 @@ module InContactClient
 
     describe ".find" do
       before do
-        path = "services/v8.0/agents/2682904"
-        mock_request(:get, path, 200, "one_agent")
+        options = { path: "agents/2682904", response_file: "one_agent" }
+        mock_request(:get, 200, options)
         @agent_response = agent.find(2682904)
       end
 

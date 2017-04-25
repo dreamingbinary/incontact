@@ -9,8 +9,8 @@ module InContactClient
 
     describe ".active" do
       before do
-        path = "services/v8.0/contacts/active"
-        mock_request(:get, path, 200, "active_contacts")
+        options = { path: "contacts/active", response_file: "active_contacts" }
+        mock_request(:get, 200, options)
         @contact_response = contacts.active
       end
 
