@@ -21,11 +21,11 @@ module InContactClient
     private
 
     def create_resource(resource)
-      resource_class = "InContactClient::#{resource}".constantize
+      resource_model = "InContactClient::#{resource}".constantize
       data_model     = "InContactClient::Responses::#{resource.singularize}Response".constantize
       connection     = create_connection(data_model)
 
-      resource_class.new(connection)
+      resource_model.new(connection)
     end
 
     def create_connection(data_model)
