@@ -13,7 +13,7 @@ module InContactClient
     def initialize(url, authorization, options = {})
       @url                = url
       @authorization      = authorization
-      @default_data_model = options[:default_data_model] || Hashie::Mash
+      @default_data_model = options[:default_data_model] || OpenStruct
     end
 
     def get(path, params = {})
@@ -80,7 +80,6 @@ module InContactClient
         faraday.headers["Accept-Encoding"] = "none"
         faraday.headers["Content-Type"]    = "application/json; charset=utf-8"
         faraday.headers["Authorization"]   = authorization
-        faraday.use FaradayMiddleware::Mashify
         faraday.use FaradayMiddleware::ParseJson
         faraday.adapter Faraday.default_adapter
       end

@@ -1,6 +1,6 @@
 module InContactClient
   module Models
-    class Agent < Hashie::Mash
+    class Agent < OpenStruct
     end
   end
 end

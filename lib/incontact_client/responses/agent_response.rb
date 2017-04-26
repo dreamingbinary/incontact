@@ -1,6 +1,6 @@
 module InContactClient
   module Responses
-    class AgentResponse < Hashie::Mash
+    class AgentResponse < OpenStruct
       def agents
         @agents ||= self["agents"].map do |agent|
           InContactClient::Models::Agent.new(agent)

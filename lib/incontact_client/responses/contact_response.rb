@@ -1,6 +1,6 @@
 module InContactClient
   module Responses
-    class ContactResponse < Hashie::Mash
+    class ContactResponse < OpenStruct
       def active_contacts
         @active_contacts ||= self["resultSet"]["activeContacts"].map do |contact|
           InContactClient::Models::Contact.new(contact)

@@ -1,6 +1,6 @@
 module InContactClient
   module Responses
-    class AgentSessionResponse < Hashie::Mash
+    class AgentSessionResponse < OpenStruct
       def session_id
         @session_id ||= self["sessionId"]
       end

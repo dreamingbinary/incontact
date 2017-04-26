@@ -1,6 +1,6 @@
 module InContactClient
   module Models
-    class Contact < Hashie::Mash
+    class Contact < OpenStruct
     end
   end
 end

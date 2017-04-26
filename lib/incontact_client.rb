@@ -2,9 +2,9 @@ require "active_support/all"
 require "retryable"
 require "faraday"
 require "faraday_middleware"
-require "hashie"
 require "incontact_client/error"
 require "incontact_client/version"
+require "ostruct"
 
 module InContactClient
   autoload :Api,                        "incontact_client/api"
