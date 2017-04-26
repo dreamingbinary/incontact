@@ -15,39 +15,39 @@ module InContactClient
 
       def response_params
         {
-          "resultSet" => {
-            "businessUnitId" => 0,
-            "lastPollTime"   => "2017-04-21T18=>17=>16.519Z",
-            "activeContacts" => [
+          "result_set" => {
+            "business_unit_id" => 0,
+            "last_poll_time"   => "2017-04-21T18=>17=>16.519Z",
+            "active_contacts"  => [
               {
-                "agentId"               => 0,
-                "campaignId"            => 0,
-                "campaignName"          => "string",
-                "contactId"             => 0,
-                "contactStart"          => "2017-04-21T18=>17=>16.519Z",
-                "fileName"              => "string",
-                "firstName"             => "string",
-                "fromAddr"              => "string",
-                "isLogged"              => true,
-                "isOutbound"            => true,
-                "isTakeover"            => true,
-                "lastName"              => "string",
-                "lastUpdateTime"        => "2017-04-21T18=>17=>16.519Z",
-                "masterContactId"       => 0,
-                "mediaType"             => 0,
-                "mediaTypeName"         => "string",
-                "pointOfContactId"      => 0,
-                "pointOfContactName"    => "string",
-                "skillId"               => 0,
-                "skillName"             => "string",
-                "state"                 => "string",
-                "stateId"               => 0,
-                "targetAgentId"         => 0,
-                "teamId"                => 0,
-                "teamName"              => "string",
-                "toAddr"                => "string",
-                "transferIndicatorId"   => "0",
-                "transferIndicatorName" => "None"
+                "agent_id"                => 0,
+                "campaign_id"             => 0,
+                "campaign_name"           => "string",
+                "contact_id"              => 0,
+                "contact_start"           => "2017-04-21T18=>17=>16.519Z",
+                "file_name"               => "string",
+                "first_name"              => "string",
+                "from_addr"               => "string",
+                "is_logged"               => true,
+                "is_outbound"             => true,
+                "is_takeover"             => true,
+                "last_name"               => "string",
+                "last_update_time"        => "2017-04-21T18=>17=>16.519Z",
+                "master_contact_id"       => 0,
+                "media_type"              => 0,
+                "media_type_name"         => "string",
+                "point_of_contact_id"     => 0,
+                "point_of_contact_name"   => "string",
+                "skill_id"                => 0,
+                "skill_name"              => "string",
+                "state"                   => "string",
+                "state_id"                => 0,
+                "targetAgent_id"          => 0,
+                "team_id"                 => 0,
+                "team_name"               => "string",
+                "to_addr"                 => "string",
+                "transfer_indicator_id"   => "0",
+                "transfer_indicator_name" => "None"
               }
             ]
           }
