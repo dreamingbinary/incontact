@@ -97,6 +97,9 @@ module InContactClient
 
     def map_response_item_to_model(item, data_model_override)
       return item if item.blank? || data_model_override.is_a?(FalseClass)
+
+      # Change keys to snake case
+      item.deep_transform_keys! { |key| key.underscore }
       data_model_klass = data_model_override || default_data_model
       return item if data_model_klass.nil?
       data_model_klass.new(item)

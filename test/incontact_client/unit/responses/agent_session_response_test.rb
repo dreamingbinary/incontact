@@ -4,7 +4,7 @@ module InContactClient
       let(:agent_session_response) { InContactClient::Responses::AgentSessionResponse.new(response_params) }
 
       describe "#session_id" do
-        it "will return the sessionId" do
+        it "will return the session_id" do
           agent_session_response.session_id.must_equal 1234
         end
       end
@@ -13,7 +13,7 @@ module InContactClient
 
       def response_params
         {
-          "sessionId" => 1234
+          "session_id" => 1234
         }
       end
     end

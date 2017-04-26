@@ -25,7 +25,7 @@ module InContactClient
       end
 
       it "will return the session_id" do
-        @agent_session_response["sessionId"].must_equal "1234"
+        @agent_session_response["session_id"].must_equal "1234"
       end
     end
 
