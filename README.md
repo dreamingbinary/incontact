@@ -7,7 +7,7 @@ This gem is a library for accessing [InContact's API](https://developer.incontac
 
 Add this line to your application's Gemfile:
 
-    gem 'shipping_client'
+    gem 'incontact_client'
 
 And then execute:
 

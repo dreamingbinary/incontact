@@ -1,6 +1,6 @@
 ### Agent Sessions
 
-You can access agent data using the `InContactClient::Api#agent_session` method.
+You can access agent session data using the `InContactClient::Api#agent_session` method.
 
 ```ruby
 api            = InContactClient::Api.new
@@ -24,7 +24,10 @@ To mask and unmask a call:
 ```ruby
 # Pass in session ID and contact ID
 
-agent_sessions.mask_call(1234567, 7654321)  # => nil
+session_id = 1234567
+contact_id = 7564313
 
-agent_session.unmask_call(1234567, 7654321) # => nil
+agent_sessions.mask_call(session_id, contact_id)  # => nil
+
+agent_session.unmask_call(session_id, contact_id) # => nil
 ```
