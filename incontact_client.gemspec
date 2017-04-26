@@ -4,13 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "incontact_client/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "incontact_client"
-  spec.version = InContactClient::VERSION
-  spec.authors = ["Brian Tennity"]
-  spec.email = ["btennity@customink.com"]
+  spec.name        = "incontact_client"
+  spec.version     = InContactClient::VERSION
+  spec.authors     = ["Brian Tennity"]
+  spec.email       = ["btennity@customink.com"]
   spec.description = "A Ruby gem to access the InContact API"
-  spec.summary = spec.description
-  spec.homepage = "https://github.com/customink/incontact_client"
+  spec.summary     = spec.description
+  spec.homepage    = "https://github.com/customink/incontact_client"
+  spec.license     = "MIT"
 
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
