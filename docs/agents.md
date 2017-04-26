@@ -13,10 +13,10 @@ To get all agents:
 # Returns an InContactClient::Responses::AgentResponse
 
 agent_response = agents.all # => {
-                            #      "businessUnitId" => 123467,
-                            #      "lastPollTime"   => "2017-04-25T19:12:22.117Z",
-                            #      "totalRecords"   => 1000,
-                            #      "agents"         => [...]
+                            #      "business_unit_id" => 123467,
+                            #      "last_poll_time"   => "2017-04-25T19:12:22.117Z",
+                            #      "total_records"    => 1000,
+                            #      "agents"           => [...]
                             #    }
 
 agent_response.total_records  # => 1000
@@ -29,26 +29,26 @@ To find one agent:
 # Returns an InContactClient::Responses::AgentResponse
 
 agent_response = agents.find(1234567) # => {
-                                      #      "businessUnitId" => 4592889,
-                                      #      "lastPollTime"   => "2017-04-21T18:12:32.120Z",
-                                      #      "agents"         => [...]
+                                      #      "business_unit_id" => 4592889,
+                                      #      "last_poll_time"   => "2017-04-21T18:12:32.120Z",
+                                      #      "agents"           => [...]
                                       #    }
 
 # Returns the agents data
 # See InContact API for available data
 # The InContact APT returns data with keys in CamelCase
 agent = agent_response.agents.first  # => {
-                                     #      "agentId"     => 1234567
-                                     #      "userName"    => "billsmith@business.com"
-                                     #      "firstName"   => "Bill"
-                                     #      "lastName"    => "Smith"
-                                     #      "emailAdress" => "billsmith@business.com"
-                                     #      "isActive"    => true
+                                     #      "agent_id"     => 1234567
+                                     #      "user_name"    => "billsmith@business.com"
+                                     #      "first_name"   => "Bill"
+                                     #      "last_name"    => "Smith"
+                                     #      "email_adress" => "billsmith@business.com"
+                                     #      "is_active"    => true
                                      #      ...
                                      #    }
 
-agent["firstName"]  # => "Bill"
+agent["first_name"]  # => "Bill"
 
-# The model is a Hashie::Mash, so this will also work
-agent.firstName     # => "Bill"
+# The model is an OpenStruct, so this will also work
+agent.first_name     # => "Bill"
 ```

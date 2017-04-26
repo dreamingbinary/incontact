@@ -14,7 +14,7 @@ To join a session:
 # Returns an InContactClient::Responses::AgentSessionRespose
 
 agent_session_response = agent_sessions.join_agent_session(1234567) # => {
-                                                                    #      "sessionId" => 12346
+                                                                    #      "session_id" => 12346
                                                                     #    }
 agent_session_response.session_id # => 123456
 ```
