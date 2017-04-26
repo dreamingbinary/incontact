@@ -1,4 +1,4 @@
-# InContactClient
+# InContactClient [![Build Status](https://travis-ci.org/customink/incontact_client.svg?branch=master)](https://travis-ci.org/customink/incontact_client)
 
 This gem is a library for accessing [InContact's API](https://developer.incontact.com/API)
 
