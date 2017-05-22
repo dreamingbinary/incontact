@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - ruby-2.2.2
+cache:
+  - bundler
+  - apt
+sudo: false
