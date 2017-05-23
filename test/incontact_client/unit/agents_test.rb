@@ -39,6 +39,10 @@ module InContactClient
       it "will return an agent" do
         @agent_response.agents.count.must_equal 1
       end
+
+      it "will turn the keys into camel_case" do
+        @agent_response.business_unit_id.wont_be_nil
+      end
     end
   end
 end
