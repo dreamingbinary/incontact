@@ -99,10 +99,26 @@ module InContactClient
       return item if item.blank? || data_model_override.is_a?(FalseClass)
 
       # Change keys to snake case
-      item.deep_transform_keys! { |key| key.underscore }
+      item = underscore_hash_keys(item)
       data_model_klass = data_model_override || default_data_model
       return item if data_model_klass.nil?
       data_model_klass.new(item)
+    end
+
+    # Based on ActiveSupport's Hash#deep_transform_keys, which is only available in
+    # versions >= 4.0.2. We'll port it here to work with versions < 4.0.2
+    # Source: https://github.com/rails/rails/blob/55f9b8129a50206513264824abb44088230793c2/activesupport/lib/active_support/core_ext/hash/keys.rb#L143-L154
+    def underscore_hash_keys(item)
+      case item
+      when Hash
+        item.each_with_object({}) do |(key, value), result|
+          result[key.underscore] = underscore_hash_keys(value)
+        end
+      when Array
+        item.map { |value| underscore_hash_keys(value) }
+      else
+        item
+      end
     end
   end
 end
