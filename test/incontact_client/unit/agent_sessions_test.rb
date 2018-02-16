@@ -16,7 +16,7 @@ module InContactClient
         path = "agent-sessions/join"
         body = { "asAgentId" => 1234 }
         options = { request_body: body, response_file: "join_session", path: path }
-        mock_request(:post, 202, options )
+        mock_request(:post, 202, options)
         @agent_session_response = agent_session.join_agent_session(1234)
       end
 

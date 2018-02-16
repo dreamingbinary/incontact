@@ -18,6 +18,10 @@ module InContactClient
       @agent_sessions ||=  create_resource(InContactClient::Resources::AGENT_SESSIONS)
     end
 
+    def call_lists
+      @call_lists ||=  create_resource(InContactClient::Resources::CALL_LISTS)
+    end
+
     private
 
     def create_resource(resource)

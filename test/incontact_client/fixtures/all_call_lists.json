@@ -1,0 +1,32 @@
+{
+  "callingLists": [
+    {
+      "listId": 0,
+      "listName": "string",
+      "prospectiveContactCount": 0,
+      "status": "Active",
+      "totalRecords": 0,
+      "invalidRecords": 0,
+      "validRecords": 0,
+      "finalizedRecords": 0,
+      "createDate": "2018-02-06T17:40:29.158Z",
+      "uploadDate": "2018-02-06T17:40:29.158Z",
+      "updateDate": "2018-02-06T17:40:29.158Z",
+      "removeDate": "2018-02-06T17:40:29.158Z"
+    },
+    {
+      "listId": 0,
+      "listName": "string",
+      "prospectiveContactCount": 0,
+      "status": "Active",
+      "totalRecords": 0,
+      "invalidRecords": 0,
+      "validRecords": 0,
+      "finalizedRecords": 0,
+      "createDate": "2018-02-06T17:40:29.158Z",
+      "uploadDate": "2018-02-06T17:40:29.158Z",
+      "updateDate": "2018-02-06T17:40:29.158Z",
+      "removeDate": "2018-02-06T17:40:29.158Z"
+    }
+  ]
+}
