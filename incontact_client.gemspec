@@ -6,11 +6,11 @@ require "incontact_client/version"
 Gem::Specification.new do |spec|
   spec.name        = "incontact_client"
   spec.version     = InContactClient::VERSION
-  spec.authors     = ["Brian Tennity"]
-  spec.email       = ["btennity@customink.com"]
+  spec.authors     = ["Spreemo"]
+  spec.email       = ["engineering@spreemo.com"]
   spec.description = "A Ruby gem to access the InContact API"
   spec.summary     = spec.description
-  spec.homepage    = "https://github.com/customink/incontact_client"
+  spec.homepage    = "https://github.com/spreemo/incontact_client"
   spec.license     = "MIT"
 
 
