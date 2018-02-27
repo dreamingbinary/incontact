@@ -1,16 +1,16 @@
 ### Agents
 
-You can access agent data using the `InContactClient::Api#agents` method.
+You can access agent data using the `InContact::Api#agents` method.
 
 ```ruby
-api    = InContactClient::Api.new
-agents = api.agents # => #<InContactClient::Agents> instance
+api    = InContact::Api.new
+agents = api.agents # => #<InContact::Agents> instance
 ```
 
 To get all agents:
 
 ```ruby
-# Returns an InContactClient::Responses::AgentResponse
+# Returns an InContact::Responses::AgentResponse
 
 agent_response = agents.all # => {
                             #      "business_unit_id" => 123467,
@@ -26,7 +26,7 @@ agent_response.agents         # Returns Array of agent data
 To find one agent:
 
 ```ruby
-# Returns an InContactClient::Responses::AgentResponse
+# Returns an InContact::Responses::AgentResponse
 
 agent_response = agents.find(1234567) # => {
                                       #      "business_unit_id" => 4592889,

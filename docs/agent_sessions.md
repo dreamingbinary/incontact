@@ -1,17 +1,17 @@
 ### Agent Sessions
 
-You can access agent session data using the `InContactClient::Api#agent_session` method.
+You can access agent session data using the `InContact::Api#agent_session` method.
 
 ```ruby
-api            = InContactClient::Api.new
-agent_sessions = api.agent_sessions # => #<InContactClient::AgentSessions> instance
+api            = InContact::Api.new
+agent_sessions = api.agent_sessions # => #<InContact::AgentSessions> instance
 ```
 
 To join a session:
 
 ```ruby
 # Pass in the Agent ID
-# Returns an InContactClient::Responses::AgentSessionRespose
+# Returns an InContact::Responses::AgentSessionRespose
 
 agent_session_response = agent_sessions.join_agent_session(1234567) # => {
                                                                     #      "session_id" => 12346

@@ -1,16 +1,16 @@
 ### Contacts
 
-You can access contact data using the `InContactClient::Api#contacts method`
+You can access contact data using the `InContact::Api#contacts method`
 
 ```ruby
-api      = InContactClient::Api.new
-contacts = api.contacts # => #<InContactClient::Contacts> instance
+api      = InContact::Api.new
+contacts = api.contacts # => #<InContact::Contacts> instance
 ```
 
 To get active Contacts:
 
 ```ruby
-# Returns an InContactClient::Responses::ContactResponse
+# Returns an InContact::Responses::ContactResponse
 
 contact_response = contacts.active # => {
                                    #      "result_set" => {
