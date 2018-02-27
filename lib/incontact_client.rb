@@ -15,6 +15,7 @@ module InContactClient
   autoload :Contacts,                   "incontact_client/contacts"
   autoload :AgentSessions,              "incontact_client/agent_sessions"
   autoload :CallLists,                  "incontact_client/call_lists"
+  autoload :Dispositions,               "incontact_client/dispositions"
   autoload :Resources,                  "incontact_client/resources"
 
   module Models
@@ -23,6 +24,7 @@ module InContactClient
     autoload :Contact,      "incontact_client/models/contact"
     autoload :AgentSession, "incontact_client/models/agent_session"
     autoload :CallList,     "incontact_client/models/call_list"
+    autoload :Disposition,  "incontact_client/models/disposition"
   end
 
   module Responses
@@ -30,5 +32,7 @@ module InContactClient
     autoload :AgentResponse,        "incontact_client/responses/agent_response"
     autoload :AgentSessionResponse, "incontact_client/responses/agent_session_response"
     autoload :CallListResponse,     "incontact_client/responses/call_list_response"
+    autoload :CallListResponse,     "incontact_client/responses/call_list_response"
+    autoload :DispositionResponse,   "incontact_client/responses/disposition_response"
   end
 end

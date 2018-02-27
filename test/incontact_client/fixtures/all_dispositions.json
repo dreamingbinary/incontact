@@ -1,0 +1,24 @@
+{
+  "businessUnitId": 4596103,
+  "totalRecords": 22,
+  "dispositions": [
+    {
+      "dispositionId": 3807,
+      "dispositionName": "New Referral",
+      "notes": null,
+      "lastUpdated": "2018-01-26T14:09:51.000Z",
+      "classificationId": 6,
+      "systemOutcome": "CURR",
+      "isPreviewDisposition": false
+    },
+    {
+      "dispositionId": 2368,
+      "dispositionName": "Wrong Number",
+      "notes": null,
+      "lastUpdated": "2018-02-07T20:16:09.000Z",
+      "classificationId": 5,
+      "systemOutcome": "CURR",
+      "isPreviewDisposition": false
+    }
+  ]
+}
